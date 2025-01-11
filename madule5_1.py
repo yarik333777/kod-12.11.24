@@ -1,25 +1,23 @@
-class house:
+class House:
+
     def __init__(self, name, number_of_floors):
         self.name = name
         self.number_of_floors = number_of_floors
-        print(f'This is house {self.name}, namber floors {self.number_of_floors}')
-
 
     def go_to(self, new_floors):
-        for i in range(1, new_floors):
-            if new_floors > self.number_of_floors or new_floors < 1:
-                print(f"There is no such floor{new_floors}")
-                break
+        self.new_floors = new_floors
+        if self.number_of_floors >= -1:
+            if self.new_floors > self.number_of_floors:
+                print('this isn,t floors')
             else:
-                print(i)
+                print(self.new_floors)
 
 
-h1 = house('ЖК Горский', 6)
-h2 = house('Домик в деревне', 2)
+
+h1 = House('ЖК Горский', 18)
+h2 = House('Домик в деревне', 2)
 h1.go_to(5)
 h2.go_to(10)
-# Реализуйте класс House, объекты которого будут создаваться следующим образом:
-# House('ЖК Эльбрус', 30)
 # Объект этого класса должен обладать следующими атрибутами:
 # self.name - имя, self.number_of_floors - кол-во этажей
 # Также должен обладать методом go_to(new_floor), где new_floor - номер этажа(int), на который нужно приехать.
